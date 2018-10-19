@@ -5,7 +5,7 @@ logo:             head_rect.jpg
 teaser:           leaf_sm.jpg
 disqus_shortname: schang8000
 #Comment out url when working locally to resolve base urls correctly
-url:              http://www-users.cs.umn.edu/~schang
+url:              https://schang8000.github.io
 
 sass:
     sass_dir: _sass
