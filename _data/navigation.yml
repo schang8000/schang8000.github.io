@@ -1,0 +1,21 @@
+# Site navigation links
+
+- title: Home
+  url: /
+  image: leaf_sm.jpg
+- title: About
+  excerpt: Introduction about myself.
+  url: /about/
+  image: head.jpg
+- title: Papers
+  excerpt: Research papers I have published.
+  url: /papers/
+  image: science_sm.jpg
+- title: Blogs
+  excerpt: My thoughts about recommender system, crowdsourcing, online social networks and geek stuff.
+  url: /blogs/
+  image: robot_sm.jpg
+- title: Photos
+  excerpt: Check out photos I took.
+  url: http://www.500px.com/ShuoChang
+  image: boat.jpg

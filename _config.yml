@@ -1,0 +1,50 @@
+
+title:            Shuo Chang
+description:      Welcome to my homepage. You can find out about my research, blogs and photos here.
+logo:             head_rect.jpg
+teaser:           leaf_sm.jpg
+disqus_shortname: schang8000
+#Comment out url when working locally to resolve base urls correctly
+url:              http://www-users.cs.umn.edu/~schang
+
+sass:
+    sass_dir: _sass
+    style: compressed
+permalink: /:categories/:title/
+kramdown:
+  toc_levels: 1..2
+highlighter: pygments
+gems:
+  - jekyll-sitemap
+
+encoding: UTF-8
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: numeric
+  toc_levels: 1..6
+  use_coderay: false
+
+  coderay:
+    coderay_line_numbers: 
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+# Site owner
+owner:
+  name: Shuo Chang
+  email: schang@cs.umn.edu
+  twitter: https://twitter.com/schang8000
+  gplus: https://plus.google.com/+StevenChangshuo
+  facebook: https://www.facebook.com/schang8000
+  google:
+    ad-client: 
+    ad-slot: 
+  bio: A PhD student in computer science.
+  avatar: head_rect.jpg # 160x160 px image for author byline
+disqus-shortname: schang8000
+
+
+exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]

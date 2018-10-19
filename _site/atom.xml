@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  
+
+  <title>Shuo Chang</title>
+  <generator uri="https://github.com/jekyll/jekyll">Jekyll v2.4.0</generator>
+    <icon>http://www-users.cs.umn.edu/~schang/apple-touch-icon-precomposed.png</icon>
+  <subtitle>Welcome to my homepage. You can find out about my research, blogs and photos here.</subtitle>
+  <link href="http://www-users.cs.umn.edu/~schang/atom.xml" rel="self"/>
+  <link href="http://www-users.cs.umn.edu/~schang/" rel="alternate" type="text/html"/>
+  <updated>2015-03-15T19:34:58-07:00</updated>
+  <id>http://www-users.cs.umn.edu/~schang/</id>
+  <author>
+    <name>Shuo Chang</name>
+    <uri>http://www-users.cs.umn.edu/~schang/</uri>
+    <email>schang@cs.umn.edu</email>
+  </author>
+
+  
+  <entry>
+    <title>Got Many Labels? Deriving Topic Labels from Multiple Sources for Social Media Posts using Crowdsourcing and Ensemble Learning</title>
+    <link href="http://www-users.cs.umn.edu/~schang/papers/WWW/"/>
+    <updated>2015-03-21T00:00:00-07:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/papers/WWW</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      
+      
+
+    </content>
+  </entry>
+  
+  <entry>
+    <title>Onboarding new users in recommender systems </title>
+    <link href="http://www-users.cs.umn.edu/~schang/blog/CSCW/"/>
+    <updated>2015-03-12T00:00:00-07:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/blog/CSCW</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      
+      &lt;p&gt;According to the song, &amp;#8220;Getting to know you&amp;#8230;, getting to know all about you&amp;#8230;&amp;#8221; is a lot of fun. But when you go to a new doctor, and fill out a 10-page patient intake form so the doctor can get to know you, it&amp;#8217;s not so much fun.&lt;/p&gt;
+
+&lt;p&gt;The same has been true for recommender systems. A typical experience for new users is to rate a bunch of items to let the system know their preferences. For example, in the MovieLens film recommender, first-time visitors had to rate 15 movies (see the screen below). This process usually required paging through multiple screens, took over 5 minutes, and discouraged some people so much they dropped out before ever making it to the site home page!
+&lt;img src=&quot;http://www-users.cs.umn.edu/~schang/images/blog_old_movielens.jpg&quot; alt=&quot;Before&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But this is the price you have to pay for personalized treatment - whether from a doctor or film recommender -right?&lt;/p&gt;
+
+&lt;p&gt;Well, sort of. Recommender systems researchers call this the &amp;#8220;user cold-start problem&amp;#8221; and have been working to solve it for years. They have been improving the quality of personalization after the onboarding process, so that users think it worthwhile to go through the process. Researchers have published many papers about how to find the optimal sequence of items (15 movies in MovieLens) to learn a user&amp;#8217;s interest, e.g. ordering items by the entropy of ratings, constructing decision trees from items, and so on.&lt;/p&gt;
+
+&lt;p&gt;We came up with a new approach to this problem when we redesigned the onboarding process for the new version of MovieLens. Our approach is based on the intuition that users can efficiently train the system by expressing preferences for algorithmically-generated groups of items. A full paper describing this research study will appear in proceedings of CSCW 2015.&lt;/p&gt;
+
+&lt;p&gt;When we designed the new version of MovieLens, we were faced with two seemingly contradictory goals: requiring minimal user effort and providing high-quality personalization. Our idea is to ask new users to provide preferences by choosing groups of items that represent their preferences. We operationalized this in MovieLens as groups of movies described by three representative movies and three descriptive tags (see below for a screenshot). This is based on the intuition that expressing preferences for groups of items requires less effort than expressing multiple preferences for individual items. For example, rating &amp;#8220;Disney animation&amp;#8221; takes less effort than rating &amp;#8220;Frozen&amp;#8221;, &amp;#8220;The Lion King&amp;#8221;, and &amp;#8220;Bambi&amp;#8221; individually. Once a user has expressed a preference for a movie group, we can pretend that user has the typical ratings profile of more experienced users who also prefer that group. In this way, we are able to tie new users into our standard ratings-based personalization framework.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www-users.cs.umn.edu/~schang/images/blog_movielens.jpg&quot; alt=&quot;After&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In our published paper, we described several design challenges (and our solutions) raised by our new process:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;generating movie groups using clustering algorithms;&lt;/li&gt;
+  &lt;li&gt;visualizing the movie groups to users;&lt;/li&gt;
+  &lt;li&gt;collecting user preferences for movie groups;&lt;/li&gt;
+  &lt;li&gt;recommending movies based on users&amp;#8217; group preferences.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We evaluated the new process through offline simulation and an online user experiment. We found that the group-based process takes less than half the time of the old &amp;#8220;rate 15 movies&amp;#8221; process. Better still, we found that the new process provides more useful initial recommendation lists, as judged by the users in our study. The trade-off is slightly reduced prediction accuracy, because we cannot infer user rating bias from preferences on item groups.&lt;/p&gt;
+
+&lt;p&gt;Our approach is generalizable to any collaborative filtering-based recommender system. Next time you hear user complaints when building an onboarding process for a recommender system, give our approach a try!&lt;/p&gt;
+
+&lt;p&gt;We encourage you to attend our talk at CSCW, read the &lt;a href=&quot;http://www-users.cs.umn.edu/~schang/papers/coldstart15.pdf&quot;&gt;paper&lt;/a&gt;, or try out the new process in &lt;a href=&quot;www.movielens.org&quot;&gt;MovieLens&lt;/a&gt;!&lt;/p&gt;
+
+    </content>
+  </entry>
+  
+  <entry>
+    <title>Internship @ Google Research Lab</title>
+    <link href="http://www-users.cs.umn.edu/~schang/blog/Google/"/>
+    <updated>2014-09-15T00:00:00-07:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/blog/Google</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      &lt;img src=&quot;http://www-users.cs.umn.edu/~schang/images/google.jpg&quot;&gt;&lt;br/&gt;
+      &lt;p&gt;The past summer I had the privilege to work with top-notch HCI research
+Ed Chi in Google Research. It has been a very good learning experience
+working in a company with cutting edge technology and top experts. I was
+very happy to meet some old friends and getting to know a few new
+friends.&lt;/p&gt;
+
+&lt;p&gt;And I will miss the free food:)&lt;/p&gt;
+
+
+    </content>
+  </entry>
+  
+  <entry>
+    <title>Using Groups of Items for Preference Eliciation in Recommender Systems</title>
+    <link href="http://www-users.cs.umn.edu/~schang/papers/ColdStart/"/>
+    <updated>2014-09-15T00:00:00-07:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/papers/ColdStart</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      
+      &lt;h2 id=&quot;abstract&quot;&gt;ABSTRACT&lt;/h2&gt;
+&lt;p&gt;To achieve high quality initial personalization, recommender systems must
+provide an efficient and effective process for new users to express
+their preferences.
+We propose that this goal is  best served not by the classical method
+where users begin by expressing preferences for individual items - this
+process is an inefficient way to convert a user&amp;#8217;s effort into improved
+personalization.
+Rather, we propose that new users can begin by expressing their
+preferences for \emph{groups} of items.
+We test this idea by designing and evaluating an interactive process
+where users express preferences across groups of items that are
+automatically generated by clustering algorithms.
+We contribute a strategy for recommending items based on these
+preferences that is generalizable to any collaborative filtering-based
+system.
+We evaluate our process with both offline simulation methods and an
+online user experiment.
+We find that, as compared with a baseline rate-15-items interface, (a)
+users are able to complete the preference elicitation process in less
+than half the time, and (b) users are more satisfied with the resulting
+recommended items.
+Our evaluation reveals several advantages and other trade-offs involved
+in moving from item-based preference elicitation to group-based
+preference elicitation.&lt;/p&gt;
+
+
+    </content>
+  </entry>
+  
+  <entry>
+    <title>&#39;I LOVE THIS SITE!&#39;&#39; vs. &#39;It&#39;s a little girly&#39;: Perceptions of and Initial User Experience with Pinterest</title>
+    <link href="http://www-users.cs.umn.edu/~schang/papers/pinterest/"/>
+    <updated>2014-09-14T00:00:00-07:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/papers/pinterest</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      
+      
+
+    </content>
+  </entry>
+  
+  <entry>
+    <title>What attracts attention on Pinterest?</title>
+    <link href="http://www-users.cs.umn.edu/~schang/blog/Pinterest/"/>
+    <updated>2014-02-04T00:00:00-08:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/blog/Pinterest</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      
+      &lt;p&gt;As the third-largest English-language social network behind Facebook and Twitter, Pinterest has surpassed Reddit, Digg, and others to become the world&amp;#8217;s most popular social curation site. Despite the popularity of Pinterest, there has been little scientific work examining the strategies of successful Pinterest users. We have been studying Pinterest for the past year and a half, with one paper appearing in &lt;a href=&quot;http://dl.acm.org/citation.cfm?id=2481336&quot;&gt;CHI 2013&lt;/a&gt; and another one to be presented at &lt;a href=&quot;http://www-users.cs.umn.edu/~schang/papers/cscw14.pdf&quot;&gt;CSCW 2014&lt;/a&gt;. This post summarizes the highlights of the CSCW paper.&lt;/p&gt;
+
+&lt;p&gt;In this work we studied the types of content and behavior that attract attention - namely repins and follows - in Pinterest. We looked at a number of factors, including the diversity of pinned content, homophily (the tendency for similar people to have more social connections), and gender.&lt;/p&gt;
+
+&lt;p&gt;Using our dataset of thousands of Pinterest users and millions of pins, we identified a number of factors that correlated with the number of followers a user had: the most powerful correlates were obvious factors like the amount of content the user pinned and the number of other users the user followed. However, topical diversity also played a role: &lt;strong&gt;the more topically diverse one&amp;#8217;s set of pins, the more followers one tends to have, but only up to a certain point.&lt;/strong&gt; So, in other words, the Pinterest user who pins content in many categories - e.g. food/drink, DIY, home decor, travel, etc. - tends to have more followers than the Pinterest user who sticks to a single or small number of categories. However, when the diversity of categories gets too great, the number of followers tends to go down. The figure below shows this relationship in more detail.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www-users.cs.umn.edu/~schang/images/blog_diversity.jpg&quot; alt=&quot;diversity&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The notion of &lt;a href=&quot;http://en.wikipedia.org/wiki/Homophily&quot;&gt;homophily&lt;/a&gt; is well known in social science: people tend to make connections with those who are similar to them. We studied how homophily of topic interests plays a role in repinning and following behavior on Pinterest. &lt;strong&gt;We found that while people tend to repin from those who share similar interests, this effect is smaller when it comes to following users.&lt;/strong&gt; So, for instance, while a Pinterest user might follow their friends with different interests, they tend to repin less from these friends.&lt;/p&gt;
+
+&lt;p&gt;Finally, our findings related to gender were surprising: the content posted by men and women was not as different as one might expect. The most significant divergence across genders was that &lt;strong&gt;male users tended to concentrate their pins on certain topics (i.e. specialize), whereas female users tended to pin more diverse content.&lt;/strong&gt; When it comes to individual topics, pins from both genders followed relatively similar distributions. As seen in the figure below, the most common pin topic was &amp;#8220;Food/Drink&amp;#8221; for both genders. Along the same lines, men and women both pinned content in the “Design” and &amp;#8220;Home Decor&amp;#8221; categories quite often. While men pinned &amp;#8220;stereotypically male&amp;#8221; topics like &amp;#8220;Cars/Motorcyles&amp;#8221; and &amp;#8220;Sports&amp;#8221; more than women, these topics still were not popular among men, representing only a small percentage of their pins. For example, a pin by a male user is much more likely to be about home decor than sports.
+&lt;img src=&quot;http://www-users.cs.umn.edu/~schang/images/blog_pin.jpg&quot; alt=&quot;distribution&quot; /&gt;&lt;/p&gt;
+
+    </content>
+  </entry>
+  
+  <entry>
+    <title>Best Paper Award at ASONAM</title>
+    <link href="http://www-users.cs.umn.edu/~schang/blog/ASONAM/"/>
+    <updated>2013-09-13T00:00:00-07:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/blog/ASONAM</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      
+      &lt;p&gt;In the ASONAM conference in Niagara Falls this August, I received the 
+ best full paper award for my paper &lt;a href=&quot;/papers/asonam13/&quot;&gt;Routing Questions for Collaborative Answering in Community Question Answering&lt;/a&gt;
+ in collaboration with Aditya Pal who just graduated from GroupLens. &lt;/p&gt;
+
+&lt;p&gt;The paper is about an intelligent question routing algorithm for Stack Overflow, incorporating topic identification, 
+ expertise modeling and user compatibility measure. The proposed algorithm is a nice application of graph analysis, natural language processing 
+ and time series analysis. Check it out if you are interested!&lt;/p&gt;
+
+
+    </content>
+  </entry>
+  
+  <entry>
+    <title>Specialization, Homophily, and Gender in a Social Curation Site: Findings from Pinterest. </title>
+    <link href="http://www-users.cs.umn.edu/~schang/papers/cscw14/"/>
+    <updated>2013-09-12T00:00:00-07:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/papers/cscw14</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      
+      &lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Pinterest is a popular social curation site where people col-
+lect, organize, and share pictures of items. We studied a fun-
+damental issue for such sites: what patterns of activity attract
+attention (audience and content reposting)? We organized
+our studies around two key factors: the extent to which users
+specialize in particular topics, and homophily among users.
+We also considered the existence of differences between fe-
+male and male users. We found: (a) women and men dif-
+fered in the types of content they collected and the degree to
+which they specialized; male Pinterest users were not partic-
+ularly interested in stereotypically male topics; (b) sharing
+diverse types of content increases your following, but only
+up to a certain point; (c) homophily drives repinning: peo-
+ple repin content from other users who share their interests;
+homophily also affects following, but to a lesser extent. Our
+findings suggest strategies both for users (e.g., strategies to
+attract an audience) and maintainers (e.g., content recom-
+mendation methods) of social curation sites.&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;/~schang/papers/cscw14.pdf&quot; class=&quot;btn&quot;&gt;Download Paper&lt;/a&gt;&lt;/div&gt;
+
+    </content>
+  </entry>
+  
+  <entry>
+    <title>Internship @ eBay Research Lab</title>
+    <link href="http://www-users.cs.umn.edu/~schang/blog/ebay/"/>
+    <updated>2013-09-01T00:00:00-07:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/blog/ebay</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      &lt;img src=&quot;http://www-users.cs.umn.edu/~schang/images/ebay.jpg&quot;&gt;&lt;br/&gt;
+      &lt;p&gt;This past summer, I had the chance to work in the new founded HCI team in eBay research lab. 
+I had a very enjoyable experience working with &lt;a href=&quot;http://elizabethchurchill.com/‎&quot;&gt;Elizabeth Churchill&lt;/a&gt; 
+, &lt;a href=&quot;http://labs.ebay.com/people/atish-das-sarma/&quot;&gt;Atish Das Sarma&lt;/a&gt;, and, of course, the awesome fellow interns.&lt;/p&gt;
+
+&lt;p&gt;At eBay, I had the hands on experience working with real &amp;#8220;Big Data&amp;#8221;. Doing 
+large scale data analysis using Hadoop is both fun and challenging. &lt;/p&gt;
+
+
+    </content>
+  </entry>
+  
+  <entry>
+    <title>Routing Questions for Collaborative Answering in Community Question Answering</title>
+    <link href="http://www-users.cs.umn.edu/~schang/papers/asonam13/"/>
+    <updated>2013-08-12T00:00:00-07:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/papers/asonam13</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      
+      &lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Community Question Answering (CQA) service
+enables its users to exchange knowledge in the form of questions
+and answers. By allowing the users to contribute knowledge, CQA
+not only satisﬁes the question askers but also provides valuable
+references to other users with similar queries. Due to a large
+volume of questions, not all questions get fully answered. As
+a result, it can be useful to route a question to a potential
+answerer. In this paper, we present a question routing scheme
+which takes into account the answering, commenting and voting
+propensities of the users. Unlike prior work which focuses on
+routing a question to the most desirable expert, we focus on
+routing it to a group of users - who would be willing to collaborate
+and provide useful answers to that question. Through empirical
+evidence, we show that more answers and comments are desirable
+for improving the lasting value of a question-answer thread.
+As a result, our focus is on routing a question to a team of
+compatible users. We propose a recommendation model that takes
+into account the compatibility, topical expertise and availability of
+the users. Our experiments over a large real-world dataset shows
+the effectiveness of our approach over several baseline models.&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;/~schang/papers/13ASONAM.pdf&quot; class=&quot;btn&quot;&gt;Download Paper&lt;/a&gt;&lt;/div&gt;
+
+    </content>
+  </entry>
+  
+  <entry>
+    <title>&#39;I Need to Try This!&#39;: A Statistical Overview of Pinterest</title>
+    <link href="http://www-users.cs.umn.edu/~schang/papers/CHI2013/"/>
+    <updated>2013-03-12T00:00:00-07:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/papers/CHI2013</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      
+      &lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Over the past decade, social network sites have become ubiquitous places for people to maintain relationships, as well
+as loci of intense research interest. Recently, a new site has
+exploded into prominence: Pinterest became the fastest social
+network to reach 10M users, growing 4000% in 2011 alone.
+While many Pinterest articles have appeared in the popular
+press, there has been little scholarly work so far. In this paper,
+we use a quantitative approach to study three research questions about the site. What drives activity on Pinterest? What
+role does gender play in the site’s social connections? And
+ﬁnally, what distinguishes Pinterest from existing networks,
+in particular Twitter? In short, we ﬁnd that being female
+means more repins, but fewer followers, and that four verbs
+set Pinterest apart from Twitter: use, look, want and need.
+This work serves as an early snapshot of Pinterest that later
+work can leverage.&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;http://www.cc.gatech.edu/~sbakhshi/gilbert.chi13.pinterest.pdf&quot; class=&quot;btn&quot;&gt;Download Paper&lt;/a&gt;&lt;/div&gt;
+
+    </content>
+  </entry>
+  
+  <entry>
+    <title>Evolution of Experts in Question Answering Communities</title>
+    <link href="http://www-users.cs.umn.edu/~schang/papers/ICWSM12/"/>
+    <updated>2012-09-12T00:00:00-07:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/papers/ICWSM12</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      
+      &lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Community Question Answering (CQA) services thrive as
+a result of a small number of highly active users, typically
+called experts, who provide a large number of high quality
+useful answers. Understanding the temporal dynamics and
+interactions between experts can present key insights into
+how community members evolve over time. In this paper, we
+present a temporal study of experts in CQA and analyze the
+changes in their behavioral patterns over time. Further, using
+unsupervised machine learning methods, we show the interesting evolution patterns that can help us distinguish experts
+from one another. Using supervised classiﬁcation methods,
+we show that the models based on evolutionary data of users
+can be more effective at expert identiﬁcation than the models
+that ignore evolution. We run our experiments on two large
+online CQA to show the generality of our proposed approach.&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;http://www-users.cs.umn.edu/~apal/res/icwsm12_expertevolution.pdf&quot; class=&quot;btn&quot;&gt;Download Paper&lt;/a&gt;&lt;/div&gt;
+
+    </content>
+  </entry>
+  
+  <entry>
+    <title>Demonstration of Spectral Defragmentation in Flexible Bandwidth Optical Networking by FWM</title>
+    <link href="http://www-users.cs.umn.edu/~schang/papers/photo11/"/>
+    <updated>2011-09-12T00:00:00-07:00</updated>
+    <id>http://www-users.cs.umn.edu/~schang/papers/photo11</id>
+    <author>
+      <name>Shuo Chang</name>
+      <uri>http://www-users.cs.umn.edu/~schang/</uri>
+      <email>schang@cs.umn.edu</email>
+    </author>
+    <content type="html">
+      
+      &lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Flexible bandwidth elastic optical networking is an attractive solution for efficiently matching allocated bandwidth with link demand, but suffers from inevitable spectral fragmentation. In this letter, we discuss spectral defragmentation in flexible bandwidth networks using four-wave mixing (FWM) and wavelength selective switch (WSS)-based wavelength conversion blocks. Simulations show a defragmentation degree of one (i.e., the number of defragmentation blocks equals one) results in 71% and 47% reductions in blocking probability under high offered load (680 Erlangs) and low offered load (220 Erlangs), respectively. Further reductions in blocking probability result from an increased defragmentation degree. Experimental results show spectral defragmentation over 500 GHz of bandwidth for a defragmentation degree of one, validating FWM- and WSS-based spectral defragmentation in flexible bandwidth networks.&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6044702&quot; class=&quot;btn&quot;&gt;Download Paper&lt;/a&gt;&lt;/div&gt;
+
+    </content>
+  </entry>
+  
+  
+</feed>

@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+
+<div id="main" role="main">
+
+  <article class="wrap" itemscope itemtype="http://schema.org/Article">
+    <div class="sidebar">
+    <div class="head">
+      <img src="{{ site.url }}/images/{{ site.owner.avatar }}" alt="{{ author.name }}">
+    </div>
+    <span>PhD student <br /></span>
+    <span><a href="http://cs.umn.edu">Computer Science</a> <br /></span>
+    <span><a href="http://www.umn.edu">University of Minnesota</a></span>
+    
+    <div class="social-btns">
+      <a class="btn-social twitter" href="{{ site.owner.twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="btn-social facebook" href="{{ site.owner.facebook }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a class="btn-social google-plus" href="{{ site.owner.gplus }}" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+    </div>
+    <strong>Email</strong>: schang at cs[dot]umn[dot]edu
+    </div>
+
+
+
+    <div class="content">
+    {% include breadcrumbs.html %}
+
+      <div id="content" class="page-content" itemprop="articleBody">
+        {{ content }}
+        <hr />
+        <footer class="page-footer">
+          {% if page.categories %}{% include page-author.html %}{% endif %}
+          {% if page.share != false %}{% include share-this.html %}{% endif %}
+          {% include page-meta.html %}
+        </footer><!-- /.footer -->
+        <aside>
+          {% if page.comments == true %}{% include comments.html %}{% endif %}
+        </aside>
+      </div><!-- /.content -->
+    </div><!-- /.inner-wrap -->
+    {% if page.ads == true %}<div class="ads">{% include advertising.html %}</div><!-- /.ads -->{% endif %}
+  </article><!-- ./wrap -->
+</div><!-- /#main -->
+
